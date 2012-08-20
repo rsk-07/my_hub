@@ -1,0 +1,33 @@
+<% if signed_in? %>
+  <div class="row">
+    <aside class="span4">
+	  <section>
+	        <%= render 'shared/user_info' %>
+	      </section>
+	      <section>
+	        <%= render 'shared/stats' %>
+	      </section>
+	      <section>
+	        <%= render 'shared/micropost_form' %>
+	   	  </section>
+    </aside>
+	<div class="span8">
+	      <h3>Micropost Feed</h3>
+	      <%= render 'shared/feed' %>
+	</div>
+  </div>  
+<% else %>
+  <div class="center hero-unit">
+    <h1>Welcome to my "HUB...!!!"</h1>
+
+    <h2>
+      Let' Talk, Share and Enjoy
+    </h2>
+
+    <%= link_to "Sign up now!", signup_path, 
+                                class: "btn btn-large btn-primary" %>
+  </div>
+<div class="center">
+  <a href="http://www.google.com"><img alt="Knowledge" src="/assets/knowledge.jpg" style="float:middle"/></a>
+</div>
+<% end %>
